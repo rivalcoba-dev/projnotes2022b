@@ -19,6 +19,8 @@ app.set('port', port);
  * Create HTTP server.
  */
 
+// app es una funcion de tipo middleware (codigo intermediario)
+// (req, res) =>{ ...res.send("algo") }
 var server = http.createServer(app);
 
 /**
@@ -87,4 +89,7 @@ function onListening() {
     ? 'pipe ' + addr
     : 'port ' + addr.port;
   debug('Listening on ' + bind);
+  // Desestrecuturando port de addr
+  let {port} = addr
+  console.log(`Listening at http://localhost:${port}`);
 }
