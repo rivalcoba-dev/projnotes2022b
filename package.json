@@ -4,6 +4,8 @@
   "private": true,
   "scripts": {
     "start": "node ./bin/www",
+    "dev": "node ./bin/www",
+    "build": "",
     "itgam": "ls"
   },
   "dependencies": {
