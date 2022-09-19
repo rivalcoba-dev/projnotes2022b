@@ -36,7 +36,7 @@ app.use(express.urlencoded({ extended: false }));
 // Parsear cookies
 app.use(cookieParser());
 // Servidor de archivos estáticos
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname,'..', 'public')));
 
 // Registro Rutas
 app.use('/', indexRouter);
