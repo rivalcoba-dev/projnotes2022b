@@ -1,22 +1,25 @@
 // Biblioteca de 3ros para manejar errores http
-var createError = require('http-errors');
+// ES5: var createError = require('http-errors');
+// ES6 👇
+import createError from 'http-errors';
 // El framework express
-var express = require('express');
+import express from 'express';
 // Biblioteca del nucleo de node que sirve para
 // administrar rutas
-var path = require('path');
+import path from 'path';
 // Biblioteca externa que sirve para administrar
 // cookies
-var cookieParser = require('cookie-parser');
+import cookieParser from 'cookie-parser';
 // Biblioteca que registra en consola
 // solicitudes del cliente
-var logger = require('morgan');
+import logger from 'morgan';
 
 // Definición de rutas
-var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
+import indexRouter from "./routes/index";
+import usersRouter from "./routes/users";
+
 // Creando una instancia de express
-var app = express();
+const app = express();
 
 // view engine setup
 // Configura el motor de plantillas
@@ -44,12 +47,12 @@ app.use('/index', indexRouter);
 app.use('/users', usersRouter);
 
 // catch 404 and forward to error handler
-app.use(function(req, res, next) {
+app.use((req, res, next)=> {
   next(createError(404));
 });
 
 // error handler
-app.use(function(err, req, res, next) {
+app.use((err, req, res, next)=> {
   // set locals, only providing error in development
   res.locals.message = err.message;
   res.locals.error = req.app.get('env') === 'development' ? err : {};
@@ -59,4 +62,8 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
-module.exports = app;
+// Exportando la instancia del server "app"
+// ES5 👇
+// module.exports = app;
+// ES6 👇
+export default app;
