@@ -4,7 +4,8 @@
   "private": true,
   "scripts": {
     "start": "node ./server/bin/www",
-    "dev": "nodemon ./server/bin/www",
+    "dev": "nodemon --exec babel-node ./server/bin/www",
+    "devb": "babel-watch ./server/bin/www",
     "build": "",
     "itgam": "ls"
   },
