@@ -18,4 +18,32 @@ module.exports = {
     // 2.2 Nombre del archivo de salida
     filename: "bundle.js"
   },
+  // Agregando un modulo a webpack
+  module: {
+    rules: [
+      {
+        test: /\.js$/,
+        exclude: /(node_modules|bower_components)/,
+        use: [
+          {
+            loader: 'babel-loader',
+            options: {
+              presets: [
+                [
+                  '@babel/preset-env',
+                  {
+                    'modules': false,
+                    'useBuiltIns': 'usage',
+                    // '> 0.25%, not dead'
+                    'targets': {"chrome": 80},
+                    'corejs': 3
+                  }
+                ]
+              ]
+            }
+          }
+        ]
+      }
+    ]
+  }
 }
