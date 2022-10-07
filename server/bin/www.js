@@ -7,7 +7,7 @@
 // var app = require('../app');
 // ES6 👇
 import app from "../app"
-var debug = require('debug')('projnotes2022b:server');
+var debug = require('debug')('projnotes2022b');
 var http = require('http');
 
 /**
@@ -91,8 +91,7 @@ function onListening() {
   var bind = typeof addr === 'string'
     ? 'pipe ' + addr
     : 'port ' + addr.port;
-  debug('Listening on ' + bind);
-  // Desestrecuturando port de addr
-  let {port} = addr
-  console.log(`Listening at http://localhost:${port}`);
+    // Desestrecuturando port de addr
+    let {port} = addr
+  debug(`🎈 Listening on http://localhost:${port}`);
 }

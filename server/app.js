@@ -14,6 +14,12 @@ import cookieParser from 'cookie-parser';
 // solicitudes del cliente
 import logger from 'morgan';
 
+// Importando Webbpack middleware
+import webpack from 'webpack'
+import webpackDevMiddleware from 'webpack-dev-middleware'
+import webpackHotMiddleware from 'webpack-hot-middleware'
+import webpackConfig from '../webpack.dev.config'
+
 // Definición de rutas
 import indexRouter from "./routes/index";
 import usersRouter from "./routes/users";
