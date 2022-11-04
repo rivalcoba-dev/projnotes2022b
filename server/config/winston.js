@@ -51,7 +51,6 @@ const myFileFormat = combine(
 );
 
 // Creando el objeto de opciones de Winston
-
 const options = {
   infoFile: {
     level: 'info',
@@ -87,10 +86,10 @@ const options = {
 // Creamos una instancia del Logger
 const logger = Winston.createLogger({
   transports: [
-    new Winston.transport.File(options.infoFile),
-    new Winston.transport.File(options.warnFile),
-    new Winston.transport.File(options.errorFile),
-    new Winston.transport.Console(options.console),
+    new Winston.transports.File(options.infoFile),
+    new Winston.transports.File(options.warnFile),
+    new Winston.transports.File(options.errorFile),
+    new Winston.transports.Console(options.console),
   ],
   exitOnError: false, // No finaliza en excepciones no manejadas
 });
