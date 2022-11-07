@@ -3,10 +3,12 @@
 /**
  * Module dependencies.
  */
-
-var app = require('../app');
-var debug = require('debug')('projnotes2022b:server');
-var http = require('http');
+// ES5 👇
+// var app = require('../app');
+// ES6 👇
+import app from "../app"
+import debug from '../services/debugLogger'
+import http from 'http';
 
 /**
  * Get port from environment and store in Express.
@@ -61,7 +63,8 @@ function onError(error) {
   }
 
   var bind = typeof port === 'string'
-    ? 'Pipe ' + port
+    // ? 'Pipe ' + port
+    ? `Pipe ${port}`
     : 'Port ' + port;
 
   // handle specific listen errors with friendly messages
@@ -88,8 +91,7 @@ function onListening() {
   var bind = typeof addr === 'string'
     ? 'pipe ' + addr
     : 'port ' + addr.port;
-  debug('Listening on ' + bind);
-  // Desestrecuturando port de addr
-  let {port} = addr
-  console.log(`Listening at http://localhost:${port}`);
+    // Desestrecuturando port de addr
+    let {port} = addr
+  debug(`🎈 Listening on http://localhost:${port}`);
 }
