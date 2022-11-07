@@ -12,7 +12,8 @@
     "b:s": "npm run cleans && babel ./server --out-dir dist --copy-files",
     "b:c": "npm run cleanc && webpack --config ./webpack.config.js --mode production",
     "itgam": "ls",
-    "build": "npm run b:c && npm run b:s"
+    "build": "npm run b:c && npm run b:s",
+    "clean-logs": "rm -rf ./server/logs/*.log"
   },
   "dependencies": {
     "app-root-path": "^3.0.0",
