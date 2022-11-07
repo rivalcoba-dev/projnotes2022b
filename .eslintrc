@@ -15,6 +15,9 @@
     },
     "rules": {
         "prettier/prettier": ["error"],
-        "no-console": "off",
+        "no-console": "off"
+    },
+    "globals": {
+        "M": "writable"
     }
 }
