@@ -19,6 +19,9 @@ import webpackDevMiddleware from 'webpack-dev-middleware';
 import WebpackHotMiddleware from 'webpack-hot-middleware';
 import webpackConfig from '../webpack.dev.config';
 
+// Importando el configurador de motor de plantillas
+import configTemplateEngine from './config/templateEngine'; 
+
 // Logger de la aplicación
 import logger from './config/winston';
 import debug from './services/debugLogger';
@@ -63,12 +66,7 @@ if (nodeEnv === 'development') {
 
 // view engine setup
 // Configura el motor de plantillas
-// 1. Establecer donde estarán las plantillas
-// (Vistas -> Views)
-// app.set("<nombre de la var>", <valor>)
-app.set('views', path.join(__dirname, 'views'));
-// Establezco que motor precargado usare
-app.set('view engine', 'hbs');
+configTemplateEngine(app);
 
 // Establezco Middelware
 app.use(morgan('dev', { stream: logger.stream }));
