@@ -1,6 +1,6 @@
-// Cargado estilos
-import './stylesheet/myStyles.css';
-import './stylesheet/style.css';
+// Cargado estilos personalizados
+// import './stylesheet/myStyles.css';
+// import './stylesheet/style.css';
 // Importandoe Estilos de Materialize CSS
 import 'materialize-css/dist/css/materialize.css';
 // Importando scripts de Materialize

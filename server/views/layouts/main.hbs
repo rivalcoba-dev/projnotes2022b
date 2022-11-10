@@ -1,12 +1,25 @@
-<!DOCTYPE html>
 <html>
   <head>
     <title>{{title}}</title>
-    <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon">
+    <link rel='shortcut icon' href='/images/favicon.ico' type='image/x-icon' />
     <link rel='stylesheet' href='/stylesheets/app.css' />
   </head>
   <body>
-    {{{body}}}
-    <script src="/bundle.js"></script>
+    <nav>
+      <div class='container'>
+        <div class='nav-wrapper'>
+          <a href='#' class='brand-logo'>Logo</a>
+          <ul id='nav-mobile' class='right hide-on-med-and-down'>
+            <li><a href='#'>Oper 1</a></li>
+            <li><a href='#'>Oper 2</a></li>
+            <li><a href='#'>Oper 3</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <div class='container'>
+      {{{body}}}
+    </div>
+    <script src='/bundle.js'></script>
   </body>
 </html>
