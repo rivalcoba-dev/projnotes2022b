@@ -13,10 +13,14 @@ class MongooseOdm {
       // Configuraciones que requiere mongoose
       mongoose.Promise = global.Promise;
       logger.info(`🚠 Conectado a la DB en: ${this.url}`);
+      // Intento de conexión
+      const connection = await mongoose.connect(this.url);
+      return connection;
     } catch (error) {
       logger.error(
         `🥀 No se pudo realizar la conexion debido a: ${error.message}`
       );
+      return false;
     }
   }
 }
