@@ -1,16 +1,24 @@
+{{> _toolbarOperationsMenu}}
+
 <div class='container'>
   <div class='nav-wrapper'>
     <a href='/' class='brand-logo'>&#128209;ProjNotes</a>
     <ul id='nav-mobile' class='right hide-on-med-and-down'>
       <li>
-        <a href='/'><i class='material-icons left'>home</i> Inicio</a>
+        <a href='/'><i class='material-icons right'>home</i> Inicio</a>
       </li>
       <li><a href='/about'>
-        <i class='material-icons left'>business</i>
+        <i class='material-icons right'>business</i>
         Acerca de
       </a></li>
+      <!-- Dropdown Menu -->
+      <li>
+        <a href="#" class="dropdown-trigger" data-target="dropdownMenu">
+          Proyectos <i class="material-icons right">menu</i>
+        </a>
+      </li>
     </ul>
-    <!-- Visualizción de navegacion par amoviles -->
+    <!-- Visualizción de navegacion para moviles -->
     <a href='#' data-target='slide-out' class='sidenav-trigger'>
       <i class='material-icons'>menu</i>
     </a>
@@ -21,10 +29,19 @@
           Inicio
         </a>
       </li>
-      <li><a href='/about'>
-        <i class='material-icons left'>business</i>
-        Acerca de
-      </a></li>
+      <li class="divider"></li>
+      <li>
+        <a href="/project">Listar <i class="material-icons left">list</i></a>
+      </li>
+      <li>
+        <a href="/project/add">Crear <i class="material-icons left">add_box</i></a>
+      </li>
+      <li>
+        <a href='/about'>
+          <i class='material-icons left'>business</i>
+          Acerca de
+        </a>
+      </li>
     </ul>
   </div>
 </div>
