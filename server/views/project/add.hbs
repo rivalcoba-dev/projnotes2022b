@@ -1,1 +1,42 @@
-<h1>Crear Proyecto</h1>
+<div class='row'>
+  <div class='col s12 m10 offset-m1 l8 offset-l2'>
+    <div class='card'>
+      <!-- Imagen de tarjeta -->
+      <div class='card-image'>
+        <img src='/images/project.jpg' alt='Project Image' />
+        <span class='card-title white teal-text text-darken-4'>
+          Agregar Proyecto
+        </span>
+      </div>
+      <!-- Contenido de tarjeta -->
+      <form autocomplete='off' action='/project/add' method='POST'>
+        <div class='card-content'>
+          <div class='input-field'>
+            <label for='project-name'>Nombre de tu idea de proyecto</label>
+            <input
+              placeholder='El nombre del proyecto aqui 👇'
+              type='text'
+              name='name'
+              id='project-name'
+            />
+          </div>
+          <div class='input-field'>
+            <label for='project-description'>
+              Descripción del proyecto
+            </label>
+            <textarea
+              name='description'
+              class="materialize-textarea"
+              id='project-description'
+            ></textarea>
+          </div>
+        </div>
+        <div class='card-action'>
+          <button type="submit" class="blue darken-3 waves-effect waves-light btn">
+            <i class="material-icons left">note_add</i> Agregar
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
