@@ -1,6 +1,9 @@
 // Creando los Actions Methods
 // del controlador Project
 
+// Importando el modelo del proyecto
+import ProjectModel from './projectModel';
+
 // GET "/project"
 // GET "/project/list"
 const list = (req, res) => {
@@ -19,7 +22,7 @@ const showAddProjectForm = (req, res) => {
 
 // POST "/project/add"
 // POST "/project/create"
-const addProject = (req, res) => {
+const addProject = async (req, res) => {
   // Rescatando la info del formulario
   const { validData, errorData: error } = req;
   let project = {};
@@ -39,12 +42,19 @@ const addProject = (req, res) => {
       return newVal;
     }, {});
   } else {
-    // Si los datos del formulario fueron validos
-    // Se asignan a project
-    project = validData;
+    // Creando un documento con los datos
+    // Provistos por el formulario
+    const projectInstance = new ProjectModel(validData);
+    // Salvando el documento en la base de datos
+    try {
+      const projectDocument = await projectInstance.save();
+      return res.json(projectDocument);
+    } catch (error1) {
+      return res.status(404).json({ error1 });
+    }
   }
   // Contestando los datos del proyecti
-  res.status(200).render('project/add', { project, errorModel });
+  return res.status(200).render('project/add', { project, errorModel });
 };
 
 // Exportando el Controlador
